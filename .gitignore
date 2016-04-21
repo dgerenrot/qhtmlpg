@@ -1,4 +1,4 @@
-*.exe
+cc/*.exe
 cc/include/*usage.h
 
 
