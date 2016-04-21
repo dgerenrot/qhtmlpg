@@ -3,15 +3,16 @@
 
 	./qhtmlpg [OPTIONS] <TagPatternString>
 
-	Quickly specify the structure of your HTML page on the command line!
-	The <TagPatternString> determines the nesting of the tags with square
-	brackets.
+	Quickly specify the structure of your HTML template on the command line!
+	The <TagPatternString> determines the nesting of the tags using square
+	brackets. 
 	
 	The correct doctype, html head and title tags are also included.
 
 	For example, if <TagPatternString> is '[]', then the output BODY contains
-	a single pair of open/close DIV tags. Some other tags are also possible.
-
+	a single pair of open/close DIV tags. Some other tags are also supported.
+	
+	The resulting HTML template is printed to stdout.
 
 	OPTIONS:
 
