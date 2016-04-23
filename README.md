@@ -14,7 +14,7 @@
 	EXAMPLES:
 	
 		
-		$ ./qhtmlpg '[] p[] s[ [] [] ]' 
+		$ qhtmlpg '[] p[] s[ [] [] ]' 
 		
 		<!DOCTYPE html>
 		<html>
@@ -43,7 +43,7 @@
 		
 		
 	
-		$./qhtmlpg -h 401t '[[]] f[]'
+		$ qhtmlpg -h 401t '[[]] f[]'
 		
 		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 		<html>
@@ -67,7 +67,7 @@
 		</html>
 
 		
-		$./qhtmlpg 'S.myclass1.foo.#myId.myclass2(att="bar", att2="baz")[ [] ]'
+		$ qhtmlpg 'S.myclass1.foo.#myId.myclass2(att="bar", att2="baz")[ [] ]'
 
 		<!DOCTYPE html>
 		<html>
