@@ -32,14 +32,9 @@ $(INCLUDE)/%.h : %.txt
 	echo '#endif' >> $@
 
 
-.PHONY : dummy
-
-dummy : 
-	echo $(TEXT_VARS:.txt=.h)
-	echo $(foreach file, $(TEXT_VARS:.txt=.h), $(INCLUDE)/$(file))
 	
 $(TARGET) : *.cc $(INCLUDE)/*.h  $(foreach file, $(TEXT_VARS:.txt=.h), $(INCLUDE)/$(file))
-	g++ -o $(TARGET) *.cc -I $(INCLUDE) 
+	g++ -static -o $(TARGET) *.cc -I $(INCLUDE) 
 
 .PHONY : clean
 
