@@ -7,23 +7,30 @@ else
 	TARGET = qhtmlpg
 endif
 
+
 TEXT_VARS = usage.txt short_usage.txt
+TEXT_HEADERS = $(foreach file, $(TEXT_VARS:.txt=.h), $(INCLUDE)/$(file))
+BASENAME_UPPERCASE = $(basename $(<F)) | tr [:lower:] [:upper:]
+GENERATED_WARNING = // GENERATED FILE! DO NOT EDIT!
 
 all : $(TARGET)
 
 $(INCLUDE)/%.h : %.txt
 	echo -n '#ifndef __QHTML_' > $@
-	echo -n $(basename $(<F)) | tr [:lower:] [:upper:] >> $@
+	echo -n $(BASENAME_UPPERCASE) >> $@
 	echo '__' >> $@
 	echo -n '#define __QHTML_' >> $@
-	echo -n $(basename $(<F)) | tr [:lower:] [:upper:] >> $@
+	echo -n $(BASENAME_UPPERCASE) >> $@
 	echo -n '__' >> $@
 	echo >> $@
 	echo '#include <string>' >> $@
+	echo >> $@
+	echo $(GENERATED_WARNING) >> $@
+	echo >> $@
 	echo 'using namespace std;' >> $@
 	echo >> $@
 	echo -n 'const string '  >> $@
-	echo -n $(basename $(<F)) | tr [:lower:] [:upper:] >> $@
+	echo -n $(BASENAME_UPPERCASE) >> $@
 	echo -n ' = ' >> $@
 	sed 's/\\/\\\\/' $< | sed 's/"/\\"/g' | sed 's/\t/\\t/g' \
 			| sed 's/^/"/' | sed 's/$$/\\n"/' >> $@
@@ -33,7 +40,7 @@ $(INCLUDE)/%.h : %.txt
 
 
 	
-$(TARGET) : *.cc $(INCLUDE)/*.h  $(foreach file, $(TEXT_VARS:.txt=.h), $(INCLUDE)/$(file))
+$(TARGET) : *.cc $(INCLUDE)/*.h  $(TEXT_HEADERS)
 	g++ -static -o $(TARGET) *.cc -I $(INCLUDE) 
 
 .PHONY : clean
