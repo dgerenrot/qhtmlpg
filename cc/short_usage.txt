@@ -1,7 +1,7 @@
 
 	USAGE:
 
-	./qhtmlpg [OPTIONS] <TagPatternString>
+	qhtmlpg [OPTIONS] <TagPatternString>
 
 	Quickly specify the structure of your HTML template on the command line!
 	The <TagPatternString> determines the nesting of the tags using square
