@@ -19,10 +19,11 @@
 		<!DOCTYPE html>
 		<html>
 			<head>
-				<title>
-				</title>
-				<link rel="stylesheet" href="" >
-				<meta/>
+			        <title>
+			        </title>
+			        <link rel="stylesheet" href="" >
+			        <meta charset="UTF-8" />
+			        <meta name="keywords" content="" />
 			</head>
 			<body>
 
@@ -72,11 +73,12 @@
 		<!DOCTYPE html>
 		<html>
 			<head>
-				<title>
-				</title>
-				<link rel="stylesheet" href="" >
-				<meta/>
-			</head>
+  		           <title>
+		           </title>
+		           <link rel="stylesheet" href="" >
+		           <meta charset="UTF-8" />
+		           <meta name="keywords" content="" />
+			   </head>
 			<body>
 
 				<span class="myclass1 foo  myclass2" id="myId" att="bar" att2="baz">
