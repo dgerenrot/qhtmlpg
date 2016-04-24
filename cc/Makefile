@@ -1,10 +1,24 @@
 INCLUDE = include
-ISCYGWIN = $(shell uname -a|grep -i cygwin > /dev/null; echo $$?)
 
-ifeq ($(ISCYGWIN), 0)
-	TARGET = qhtmlpg.exe
+
+ifneq ($(findstring Windows, $(OS)), "")
+
+$(info WINDOWS DETECTED. )
+$(info *** )
+$(info You might want use Visual Studio solution provided with this project. )
+$(info If your system has sed, grep and tr tools, you may comment out )
+$(info the following error message in the Makefile and proceed. )
+$(info *** )
+$(info If using cygwin and gcc provided therein, you will not be   )
+$(info able to run the resulting executable without cygwin1.dll and some others.)
+$(info If so, consider using mingw gcc http://mingw.org)
+$(info *** )
+
+# May comment out and proceed.
+$(error Quitting for now)
+TARGET=qhtmlpg.exe
 else
-	TARGET = qhtmlpg
+TARGET=qhtmlpg
 endif
 
 
