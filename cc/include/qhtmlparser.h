@@ -75,7 +75,7 @@ class QhtmlParser {
 		inline bool isNonWordTok(char c);
 		inline char curr() { return input[pos]; }
 		inline bool isEnd() { return pos >= input.size(); }
-		inline bool noEndHere() { if (isEnd()) errUnexpectedEOL(); }
+		inline void noEndHere() { if (isEnd()) errUnexpectedEOL(); }
 
 	public:		
 		//TODO

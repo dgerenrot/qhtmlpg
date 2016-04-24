@@ -4,7 +4,12 @@
 
 #include <cstdlib>
 #include <cctype>
+
+#ifdef _WIN32
+#include"getopt.h"
+#else
 #include <unistd.h>
+#endif
 
 #include "constants.h"
 #include "qhtmlparser.h"
