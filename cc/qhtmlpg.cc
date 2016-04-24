@@ -70,7 +70,7 @@ void processOpts(int ac,
 	string optargStr;
 
 	
-	while ((optChar = getopt(ac, av, "h:t:s:m:?")) != -1) {
+	while ((optChar = getopt(ac, av, "h:t:s:m:u")) != -1) {
 		
 		switch (optChar) {
 			case 'h':
@@ -88,7 +88,7 @@ void processOpts(int ac,
 				optargStr = optArgLowercase(optarg);
 				addMeta = (optargStr == "true" || optargStr == "yes");
 				break;
-			case '?':
+			case 'u':
 				printUsageAndExit();
 				break;
 			// TODO : output file -f ?

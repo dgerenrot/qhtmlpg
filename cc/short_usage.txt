@@ -14,4 +14,4 @@
 	
 	The resulting HTML template is printed to stdout.
 	
-	For full usage info, specify the -? option.
+	For full usage info, specify the -u option.
