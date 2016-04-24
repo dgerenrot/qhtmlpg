@@ -1,7 +1,7 @@
 INCLUDE = include
 
 
-ifneq ($(findstring Windows, $(OS)), "")
+ifneq ("$(strip $(findstring Windows, $(OS)))", "")
 
 $(info WINDOWS DETECTED. )
 $(info *** )
@@ -55,7 +55,7 @@ $(INCLUDE)/%.h : %.txt
 
 	
 $(TARGET) : *.cc $(INCLUDE)/*.h  $(TEXT_HEADERS)
-	g++ -static -o $(TARGET) *.cc -I $(INCLUDE) 
+	g++  -o $(TARGET) *.cc -I $(INCLUDE) 
 
 .PHONY : clean
 
