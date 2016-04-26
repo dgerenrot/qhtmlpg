@@ -5,7 +5,7 @@
 	qhtmlpg [OPTIONS] <TagPatternString>
 
 	Quickly specify the structure of your HTML template on the command line!
-	From your brain to your hard drive in seconds! Executables provided.
+	From your brain to your hard drive in seconds! 
 	
 	The <TagPatternString> argument specifies the nesting of the tags inside the body,
 	while <!DOCTYPE...> and <HEAD> stuff is generated automatically.
