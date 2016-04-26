@@ -115,8 +115,11 @@
       <Command>move $(OutputPath)\qhtmlpg.exe ..\</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>echo "*** Generating usage headers ***"
+$(ProjectDir)make_headers.exe $(ProjectDir)..\usage.txt $(ProjectDir)..\include\usage.h 
+$(ProjectDir)make_headers.exe $(ProjectDir)..\short_usage.txt $(ProjectDir)..\include\short_usage.h
+del $(ProjectDir)make_headers.exe 
+</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -140,8 +143,11 @@
       <Command>move $(OutputPath)\qhtmlpg.exe ..\</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>echo "*** Generating usage headers ***"
+$(ProjectDir)make_headers.exe $(ProjectDir)..\usage.txt $(ProjectDir)..\include\usage.h 
+$(ProjectDir)make_headers.exe $(ProjectDir)..\short_usage.txt $(ProjectDir)..\include\short_usage.h
+del $(ProjectDir)make_headers.exe 
+</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -169,8 +175,11 @@
       <Command>move $(OutputPath)\qhtmlpg.exe ..\</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>echo "*** Generating usage headers ***"
+$(ProjectDir)make_headers.exe $(ProjectDir)..\usage.txt $(ProjectDir)..\include\usage.h 
+$(ProjectDir)make_headers.exe $(ProjectDir)..\short_usage.txt $(ProjectDir)..\include\short_usage.h
+del $(ProjectDir)make_headers.exe 
+</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -198,8 +207,11 @@
       <Command>move $(OutputPath)\qhtmlpg.exe ..\</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>echo "*** Generating usage headers ***"
+$(ProjectDir)make_headers.exe $(ProjectDir)..\usage.txt $(ProjectDir)..\include\usage.h 
+$(ProjectDir)make_headers.exe $(ProjectDir)..\short_usage.txt $(ProjectDir)..\include\short_usage.h
+del $(ProjectDir)make_headers.exe 
+</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
