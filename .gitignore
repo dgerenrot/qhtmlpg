@@ -1,3 +1,5 @@
 cc/*.exe
+cc/include/short_usage.h
+cc/include/usage.h
 
 
