@@ -281,16 +281,3 @@ void QhtmlParser::spaces() {
     }
 }
 
-// TODO;
-void QhtmlParser::someTestingRemoveMe() {
-}
-
-/*
-	TEMPLDESCRIPTOR := TAGDESCRIPTORS
-	
-	TAGDESCRIPTORS := [WS] [TAGDESCRIPTOR [WS] [TAGDESCRIPTORS]]
-	WS := [' ' | '\t' | '\n'] [WS]
-	TAGDESCRIPTOR := [div | p | h | f]
-	      [STD_ATTR_DESCRIPTORS] [WS] [ATTR_LIST] [WS] '[' [WS] [TAGDESCRIPTORS] [WS] ']'
-	
-*/

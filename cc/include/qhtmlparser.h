@@ -76,11 +76,6 @@ class QhtmlParser {
 		inline char curr() { return input[pos]; }
 		inline bool isEnd() { return pos >= input.size(); }
 		inline void noEndHere() { if (isEnd()) errUnexpectedEOL(); }
-
-	public:		
-		//TODO
-		void someTestingRemoveMe();
-
 		
 };
 

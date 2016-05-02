@@ -52,9 +52,7 @@ int main(int ac, char *av[]) {
 	string inStr = av[optind];
 
 	QhtmlParser parser(inStr, printer);
-	
-	parser.someTestingRemoveMe(); 
-	
+		
 	printer.printHead(docType, addStyle, addMeta);
 	printer.printEndl();
 	parser.parseAndProcess();
