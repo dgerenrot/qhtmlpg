@@ -9,7 +9,7 @@
 
 using namespace std;
 
-const int DEFAULT_PADSIZE = 4;
+const int DEFAULT_TABSIZE = 4;
 
 const char SPACE = ' ';
 const char QUOTE = '\'';

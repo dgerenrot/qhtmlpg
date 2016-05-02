@@ -36,7 +36,7 @@ int main(int ac, char *av[]) {
 	// setConstants();
 	
 
-	int paddingSize = DEFAULT_PADSIZE;
+	int paddingSize = DEFAULT_TABSIZE;
 	bool addStyle = true;
 	bool addMeta = true;
 	string docType = DOCTYPE_HTML5;
