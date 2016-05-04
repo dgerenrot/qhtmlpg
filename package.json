@@ -5,13 +5,13 @@
   "description": "Quickly specify the structure of your HTML page on the command line. Brackets determine the nesting of the tags. The correct doctype and a default HEAD template is also included.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Running tests...\" && ./runtests.sh"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dgerenrot/qhtmlpg.git"
   },
-  "author": "",
+  "author": "Dmitry Gerenrot dgerenrot@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dgerenrot/qhtmlpg/issues"
