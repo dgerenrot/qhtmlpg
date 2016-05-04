@@ -1,5 +1,9 @@
 
+var consts = require('./include/constants');
 require ('./include/err')();
+
+const QUOTE = consts.QUOTE;
+const DQUOTE = consts.DQUOTE;
 
 const ID_TOK = '#';
 const CLASS_TOK = '.';
@@ -23,6 +27,7 @@ const ATTRIBUTES_START = '.#(';
 const NONWORD_TOKENS = '.#=,\'\"[]() \t\n\r\f';
 const SPACES = ' \t\n\r\f';
 const NPOS = -1;
+
 
 var input;
 var tagProcessor;

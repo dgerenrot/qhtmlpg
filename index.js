@@ -25,7 +25,7 @@ var inStr = opts.options.argv
 			  &&  opts.options.argv.remain[0];
 
 if (!inStr) {
-	console.error('No tag specifier string! \n For usage info specify -u option.');
+	console.error('No tag specifier string! \nFor usage info specify -u option.');
 	process.exit(1);
 }
 
