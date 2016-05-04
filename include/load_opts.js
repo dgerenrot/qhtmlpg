@@ -31,7 +31,10 @@ function readBoolStrOrTrue(options, optName, fullName) {
 readBoolStrOrTrue(options, "s", "styles");
 readBoolStrOrTrue(options, "m", "metas");
 
-exports.tabsize = options.t || consts.DEFAULT_TABSIZE;
-exports.htmlvers = options.h  || consts.HTML5_OPT;
+exports.tabSize = options.t || consts.DEFAULT_TABSIZE;
+exports.fullUsage = options.u;
+exports.htmlVersOpt = options.h  || consts.HTML5_OPT;
+
+exports.docType = consts.DOCTYPES[exports.htmlVersOpt];
 
 exports.options = options;
