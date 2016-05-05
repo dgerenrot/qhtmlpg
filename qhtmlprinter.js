@@ -100,11 +100,19 @@ module.exports = function() {
 
 
 function addPadding() {
-	padding += SPACE.repeat(padPerLevel);
+	
+	// ECMA 6 could use repeat(), but...
+	for (var i = 0; i < padPerLevel; i++) {
+		padding += SPACE;
+	}
 }
 
 function decreasePadding() {
-	padding = SPACE.repeat(padding.length - padPerLevel);
+	padding = "";
+	var len = padding.length - padPerLevel;
+	for (var i = 0; i < len; i++) {
+		padding += SPACE;
+	}
 }
 
 function printClasses(){
