@@ -1,6 +1,6 @@
 {
   "name": "qhtmlpg",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "bin": "./index.js",
   "description": "Quickly specify the structure of your HTML page on the command line. Brackets determine the nesting of the tags. The correct doctype and a default HEAD template is also included.",
   "main": "index.js",
