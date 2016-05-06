@@ -6,7 +6,7 @@ var err = require('./include/err').err;
 
 var USAGE_FILE = 'cc' + path.sep + 'usage.txt';
 var SHORT_USAGE_FILE = 'cc' + path.sep + 'short_usage.txt';
-var JS_EXTENSION = '.js';
+var JS_EXTENSION = '.js$';
 
 var fullUsage = '';
 var shortUsage = '';
@@ -69,45 +69,10 @@ function loadUsageFrom(file1, file2) {
 }
 
 function loadUsage() {
-    var basedir = './';
-
+	
+	var basedir = process.mainModule && process.mainModule.filename;
+	basedir = path.dirname(basedir) + path.sep;
 	if (loadUsageFrom(basedir + USAGE_FILE, basedir + SHORT_USAGE_FILE)) {
 		return ;
 	}
-	
-	var ind;
-	
-	if (process.argv.length > 1 
-		&& process.argv[1].endsWith(JS_EXTENSION)) {
-		ind = 1;
-	}
-	else if (process.argv[0].endsWith(JS_EXTENSION)) {
-		ind = 0;
-	}
-	else {
-		console.error('Cannot find JavaScript program name!');
-		console.error('You should use this utility as a nodejs module!.');
-		process.exit(8);
-	}
-	
-	basedir = path.dirname(process.argv[ind]);
-	
-	console.log(basedir + ';')
-	if (!basedir.endsWith(path.sep)) {
-		basedir = basedir + path.sep;
-	}
-
-	if (loadUsageFrom(basedir + USAGE_FILE, basedir + SHORT_USAGE_FILE)) {
-		return;
-	}
-	
-    try {
-		basepath = path.dirname(fs.readlinkSync(process.argv[ind]));
-		return;
-    }
-	catch (exception) {
-		console.error('Cannot find JavaScript program name!');
-		console.error('You should use this utility as a nodejs module!.');
-		process.exit(8);
-    }
 }
