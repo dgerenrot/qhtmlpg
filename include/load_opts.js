@@ -16,8 +16,8 @@ var options = nopt(knownOpts, shortHands);
 
 function readBoolStrOrTrue(options, optName, fullName) {
 	if (options[optName] !== undefined) {
-		var optValue = (options[optName].toLowerCase() === "yes"
-					    || options[optName].toLowerCase() === "true");
+		var optValue = (options[optName].toLowerCase() === 'yes'
+					    || options[optName].toLowerCase() === 'true');
 
 		options[optName] = optValue;
 		
@@ -28,8 +28,8 @@ function readBoolStrOrTrue(options, optName, fullName) {
 	exports[fullName] = options[optName];
 }
 
-readBoolStrOrTrue(options, "s", "styles");
-readBoolStrOrTrue(options, "m", "metas");
+readBoolStrOrTrue(options, 's', 'addStyle');
+readBoolStrOrTrue(options, 'm', 'addMeta');
 
 exports.tabSize = options.t || consts.DEFAULT_TABSIZE;
 exports.fullUsage = options.u;
