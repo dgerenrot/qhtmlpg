@@ -2,32 +2,31 @@
 var consts = require('./include/constants');
 require ('./include/err')();
 
-const QUOTE = consts.QUOTE;
-const DQUOTE = consts.DQUOTE;
+var QUOTE = consts.QUOTE;
+var DQUOTE = consts.DQUOTE;
 
-const ID_TOK = '#';
-const CLASS_TOK = '.';
-const HEADER_TOK = 'h';
-const FOOTER_TOK = 'f';
-const SECTION_TOK = 's';
-const SPAN_TOK = 'S';
-const PARAGRAPH_TOK = 'p';
-const DIV_TOK = 'd';
+var ID_TOK = '#';
+var CLASS_TOK = '.';
+var HEADER_TOK = 'h';
+var FOOTER_TOK = 'f';
+var SECTION_TOK = 's';
+var SPAN_TOK = 'S';
+var PARAGRAPH_TOK = 'p';
+var DIV_TOK = 'd';
 
-const TAG_OPEN = '[';
-const TAG_CLOSE = ']';
-const ATTRLIST_OPEN = '(';
-const ATTRLIST_CLOSE = ')';
-const EQUAL = '=';
-const COMMA = ',';
+var TAG_OPEN = '[';
+var TAG_CLOSE = ']';
+var ATTRLIST_OPEN = '(';
+var ATTRLIST_CLOSE = ')';
+var EQUAL = '=';
+var COMMA = ',';
 
-const ATTRIBUTES_START = '.#(';
+var ATTRIBUTES_START = '.#(';
 
 //TODO; consistent with isspace ????
-const NONWORD_TOKENS = '.#=,\'\"[]() \t\n\r\f';
-const SPACES = ' \t\n\r\f';
-const NPOS = -1;
-
+var NONWORD_TOKENS = '.#=,\'\"[]() \t\n\r\f';
+var SPACES = ' \t\n\r\f';
+var NPOS = -1;
 
 var input;
 var tagProcessor;

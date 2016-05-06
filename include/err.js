@@ -1,8 +1,8 @@
 
-const PARSE_ERR = 1;
-const DUP_ID_ERR = 2;
-const BAD_DOCTYPE = 3;
-const MISSING_ARG = 4;
+var PARSE_ERR = 1;
+var DUP_ID_ERR = 2;
+var BAD_DOCTYPE = 3;
+var MISSING_ARG = 4;
 
 
 module.exports = function() {

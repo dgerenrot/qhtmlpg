@@ -5,7 +5,7 @@ require('./qhtmltagprocessor')();
 
 var EQ = '=';
 
-//var ENDL = '\n';
+
 var LT = '<';
 var GT = '>';
 var START_CLOSE_TAG = '</';
@@ -19,11 +19,11 @@ var QUOTE = consts.QUOTE;
 var tags = [];
 var classes = [];
 var attributes = {};
-var currId = "";
+var currId = '';
 var padPerLevel;
 
-var padding = "";
-var tagStr = "";
+var padding = '';
+var tagStr = '';
 
 module.exports = function() {
 
@@ -108,8 +108,8 @@ function addPadding() {
 }
 
 function decreasePadding() {
-	padding = "";
 	var len = padding.length - padPerLevel;
+	padding = '';
 	for (var i = 0; i < len; i++) {
 		padding += SPACE;
 	}
