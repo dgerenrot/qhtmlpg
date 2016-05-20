@@ -13,6 +13,13 @@ module.exports = function() {
 	this.SPAN = "span";
 	this.DIV = "div";
 	this.PAR = "p";
+	this.MAIN = "main";
+	this.FORM = "form";
+
+	this.METHOD = "method";
+	this.POST = "post";
+	this.ACTION = "action";
+
 
 	this.CLASS = "class";
 	this.ID = "id";

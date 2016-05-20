@@ -54,6 +54,8 @@
 		f		FOOTER tag (HTML5).
 		s		SECTION tag (HTML5)
 		S		SPAN tag.
+		m		MAIN tag.
+		F		FORM tag. Method post is added automatically. 
 		
 		The <ClassSpecifier_opt> strings are of the form .classname 
 		

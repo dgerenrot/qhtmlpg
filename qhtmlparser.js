@@ -13,6 +13,8 @@ var SECTION_TOK = 's';
 var SPAN_TOK = 'S';
 var PARAGRAPH_TOK = 'p';
 var DIV_TOK = 'd';
+var FORM_TOK = 'F';
+var MAIN_TOK = 'm';
 
 var TAG_OPEN = '[';
 var TAG_CLOSE = ']';
@@ -121,6 +123,16 @@ function handleTagStartToken() {
 			tagProcessor.openTag(tagProcessor.SPAN);
 			break;
 			
+		case MAIN_TOK:
+			tagProcessor.openTag(tagProcessor.MAIN);
+			break;
+
+		case FORM_TOK:
+			tagProcessor.openTag(tagProcessor.FORM);
+			tagProcessor.addAttr(tagProcessor.METHOD, tagProcessor.POST);
+			tagProcessor.addAttr(tagProcessor.ACTION, '');
+			break;
+
 		case DIV_TOK:
 			
 		case ID_TOK:
