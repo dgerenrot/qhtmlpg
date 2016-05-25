@@ -56,6 +56,9 @@
 		S		SPAN tag.
 		m		MAIN tag.
 		F		FORM tag. Method post is added automatically. 
+		1-6		H1-H6 tags. 
+		t		TABLE tag. 
+		
 		
 		The <ClassSpecifier_opt> strings are of the form .classname 
 		
@@ -78,8 +81,9 @@
 			<head>
 				<title>
 				</title>
-				<link rel="stylesheet" href="" >
-				<meta/>
+				<link rel='stylesheet' href='' >
+				<meta charset='UTF-8' />
+				<meta name='keywords' content='' />
 			</head>
 			<body>
 
@@ -108,8 +112,9 @@
 			<head>
 				<title>
 				</title>
-				<link rel="stylesheet" href="" >
-				<meta/>
+				<link rel='stylesheet' href='' >
+				<meta charset='UTF-8' />
+				<meta name='keywords' content='' />
 			</head>
 			<body>
 
@@ -122,3 +127,27 @@
 		</html>
 
 		
+		
+		Example 3
+		
+		>./qhtmlpg '1[] 2[] 3[]'
+		
+		<!DOCTYPE html>
+		<html>
+			<head>
+				<title>
+				</title>
+				<link rel='stylesheet' href='' >
+				<meta charset='UTF-8' />
+				<meta name='keywords' content='' />
+			</head>
+			<body>
+				<h1>
+				</h1>
+				<h2>
+				</h2>
+				<h3>
+				</h3>
+			</body>
+		</html>
+

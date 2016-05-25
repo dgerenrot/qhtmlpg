@@ -13,8 +13,16 @@ var SECTION_TOK = 's';
 var SPAN_TOK = 'S';
 var PARAGRAPH_TOK = 'p';
 var DIV_TOK = 'd';
-var FORM_TOK = 'F';
 var MAIN_TOK = 'm';
+var FORM_TOK = 'F';
+
+var H1_TOK = '1';
+var H2_TOK = '2';
+var H3_TOK = '3';
+var H4_TOK = '4';
+var H5_TOK = '5';
+var H6_TOK = '6';
+var TABLE_TOK = 't';
 
 var TAG_OPEN = '[';
 var TAG_CLOSE = ']';
@@ -131,6 +139,29 @@ function handleTagStartToken() {
 			tagProcessor.openTag(tagProcessor.FORM);
 			tagProcessor.addAttr(tagProcessor.METHOD, tagProcessor.POST);
 			tagProcessor.addAttr(tagProcessor.ACTION, '');
+			break;
+
+		case H1_TOK:
+			tagProcessor.openTag(tagProcessor.H1);
+			break;
+		case H2_TOK:
+			tagProcessor.openTag(tagProcessor.H2);
+			break;
+		case H3_TOK:
+			tagProcessor.openTag(tagProcessor.H3);
+			break;
+		case H4_TOK:
+			tagProcessor.openTag(tagProcessor.H4);
+			break;
+		case H5_TOK:
+			tagProcessor.openTag(tagProcessor.H5);
+			break;
+		case H6_TOK:
+			tagProcessor.openTag(tagProcessor.H6);
+			break;
+
+		case TABLE_TOK:
+			tagProcessor.openTag(tagProcessor.TABLE);
 			break;
 
 		case DIV_TOK:

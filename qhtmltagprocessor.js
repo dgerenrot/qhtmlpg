@@ -16,6 +16,14 @@ module.exports = function() {
 	this.MAIN = "main";
 	this.FORM = "form";
 
+	this.H1 = "h1";
+	this.H2 = "h2";
+	this.H3 = "h3";
+	this.H4 = "h4";
+	this.H5 = "h5";
+	this.H6 = "h6";
+	this.TABLE = "table"
+	
 	this.METHOD = "method";
 	this.POST = "post";
 	this.ACTION = "action";

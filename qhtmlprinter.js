@@ -15,6 +15,8 @@ var META_CHARSET = '<meta charset=\'UTF-8\' />';
 var META_KEYWORDS = '<meta name=\'keywords\' content=\'\' />';
 var SPACE = consts.SPACE;
 var QUOTE = consts.QUOTE;
+var TROW = "tr";
+var TDIVIDE = "td";
 
 var tags = [];
 var classes = [];
