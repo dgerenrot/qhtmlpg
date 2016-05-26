@@ -49,15 +49,28 @@
 		The <TagSpecifier_opt> is one of:
 		
 		d		DIV tag (the default).
+		
 		p		P tag (paragraph).
+		
 		h		HEADER tag (HTML5).
+		
 		f		FOOTER tag (HTML5).
+		
 		s		SECTION tag (HTML5)
+		
 		S		SPAN tag.
+		
 		m		MAIN tag.
+		
 		F		FORM tag. Method post is added automatically. 
+		
 		1-6		H1-H6 tags. 
-		t		TABLE tag. 
+		
+		t		TABLE tag. May be optionally followed by a string of the form <n>x<m> 
+				with <n> and <m> positive integers. This will create a table of n rows, 
+				m columns. For example, t2x3 or t10x4, small x, no spaces.
+				Both <n> and <m> must be specified, or neither. Filling these generated
+				cells with content by putting it inside the [] brackets is NOT supported.
 		
 		
 		The <ClassSpecifier_opt> strings are of the form .classname 
@@ -150,4 +163,40 @@
 				</h3>
 			</body>
 		</html>
+
+		
+		
+		Example 4
+		
+>qhtmlpg 't2x3[]'
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        </title>
+        <link rel='stylesheet' href='' >
+        <meta charset='UTF-8' />
+        <meta name='keywords' content='' />
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
 

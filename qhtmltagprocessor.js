@@ -23,10 +23,13 @@ module.exports = function() {
 	this.H5 = "h5";
 	this.H6 = "h6";
 	this.TABLE = "table"
+	this.TROW = "tr";
+	this.TDIVIDE = "td";
 	
 	this.METHOD = "method";
 	this.POST = "post";
 	this.ACTION = "action";
+	
 
 
 	this.CLASS = "class";

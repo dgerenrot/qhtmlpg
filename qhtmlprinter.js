@@ -51,6 +51,20 @@ module.exports = function() {
 		console.log(padding + START_CLOSE_TAG + tags.pop() + GT);
 	};
 
+	this.processTableDims = function(tabRows, tabCols) {
+		var i , j;
+		for (i = 0; i < tabRows; i++) {
+			openTag(TROW);
+			finishCurrOpenTag();
+			for (j = 0; j < tabCols; j++) {
+				openTag(TDIVIDE);
+				finishCurrOpenTag();
+				closeCurrTag();
+			}
+			closeCurrTag();
+		}
+	};
+
 	this.addClass = function(clazz) {
 		classes.push(clazz);
 	};
@@ -63,6 +77,7 @@ module.exports = function() {
 		attributes[attr] = val;
 	};	
 
+	
 	this.printHead = function(docPrefix, 
 							  addStyle, 
 							  addMeta) {

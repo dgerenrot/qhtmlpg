@@ -34,3 +34,4 @@ node index.js 'h.adsd.bsds#zzzi2.fff[]'
 node index.js 'h.adsd.bsds#zzz3.sjk ( a="aslk" )  []'
 node index.js "d(a='b', dkjksd='sljkdkl'   )[]"
 node index.js "h[1[]]m[2[]s[3[]3[]]t[]]"
+node index.js 't3x1#table.someclass(a="bc")[]'

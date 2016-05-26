@@ -36,11 +36,16 @@ var ATTRIBUTES_START = '.#(';
 //TODO; consistent with isspace ????
 var NONWORD_TOKENS = '.#=,\'\"[]() \t\n\r\f';
 var SPACES = ' \t\n\r\f';
+var NUMBERS = '0123456789';
+var BYX = "x";
 var NPOS = -1;
 
 var input;
 var tagProcessor;
 var pos = 0;
+
+var tabRows = 0;
+var tabCols = 0;
 
 module.exports = function () {
 
@@ -90,7 +95,7 @@ function nextTag() {
 	
 	if (isEnd() || curr() == TAG_CLOSE) return;
 			
-	handleTagStartToken();
+	handleTagStartToken(); 
 
 	if (!isAttrStart(curr()) && curr() != TAG_OPEN) {
 		pos++;
@@ -107,6 +112,7 @@ function nextTag() {
 	eatSpaceEnsureEndsWith(TAG_OPEN);
 
 	tagProcessor.finishCurrOpenTag();
+	tagProcessor.processTableDims(tabRows, tabCols);
 }
 
 function handleTagStartToken() {
@@ -162,6 +168,7 @@ function handleTagStartToken() {
 
 		case TABLE_TOK:
 			tagProcessor.openTag(tagProcessor.TABLE);
+			handleTableDimsIfNeed(); // must stop @ last digit!
 			break;
 
 		case DIV_TOK:
@@ -176,6 +183,35 @@ function handleTagStartToken() {
 		default:
 			errUnexpected(pos);
 	}
+}
+
+function handleTableDimsIfNeed() {
+	if (pos >= input.length - 1 || !isnum(input[pos + 1]))
+		return;
+
+	var numToken = ' ';
+	pos++;
+
+	while (isnum(curr())) {
+		numToken += curr();
+		pos++;
+		noEndHere();
+	}
+
+	ensureOneOf(BYX);
+	tabRows = +numToken;
+	numToken = ' ';
+	pos++;
+	noEndHere();
+	ensureOneOf.apply(null, NUMBERS.split(''));
+
+	while (isnum(curr())) {
+		numToken += curr();
+		pos++;
+		noEndHere();
+	}
+	pos--;
+	tabCols = +numToken;	
 }
 
 function readAllAttrs() {
@@ -293,7 +329,6 @@ function ensureOneOf() {
 	for (i = 0; i < arguments.length; i++) {
 		c = arguments[i];
 		
-		
 		if (curr() == c) {
 			ok = true;
 			break;
@@ -325,4 +360,8 @@ function spaces() {
 
 function isspace(c) {
 	return SPACES.indexOf(c) != NPOS;
+}
+
+function isnum(c) {
+	return NUMBERS.indexOf(c) != NPOS;
 }
