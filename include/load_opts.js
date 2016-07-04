@@ -1,4 +1,4 @@
-var consts= require('./constants');
+require('./constants')();
 var nopt = require('nopt');
 
 var knownOpts = {
@@ -31,10 +31,10 @@ function readBoolStrOrTrue(options, optName, fullName) {
 readBoolStrOrTrue(options, 's', 'addStyle');
 readBoolStrOrTrue(options, 'm', 'addMeta');
 
-exports.tabSize = options.t || consts.DEFAULT_TABSIZE;
+exports.tabSize = options.t || DEFAULT_TABSIZE;
 exports.fullUsage = options.u;
-exports.htmlVersOpt = options.h  || consts.HTML5_OPT;
+exports.htmlVersOpt = options.h  || HTML5_OPT;
 
-exports.docType = consts.DOCTYPES[exports.htmlVersOpt];
+exports.docType = DOCTYPES[exports.htmlVersOpt];
 
 exports.options = options;

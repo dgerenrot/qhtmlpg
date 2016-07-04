@@ -1,5 +1,5 @@
 
-var consts = require('./include/constants');
+require('./include/constants')();
 require('./qhtmltagprocessor')();
 
 
@@ -13,8 +13,8 @@ var START_CLOSE_TAG = '</';
 var STYLE = '<link rel=\'stylesheet\' href=\'\' >';
 var META_CHARSET = '<meta charset=\'UTF-8\' />';
 var META_KEYWORDS = '<meta name=\'keywords\' content=\'\' />';
-var SPACE = consts.SPACE;
-var QUOTE = consts.QUOTE;
+// var SPACE = consts.SPACE;
+// var QUOTE = consts.QUOTE;
 var TROW = "tr";
 var TDIVIDE = "td";
 

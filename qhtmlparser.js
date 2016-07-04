@@ -1,9 +1,9 @@
 
-var consts = require('./include/constants');
+require('./include/constants')();
 require ('./include/err')();
 
-var QUOTE = consts.QUOTE;
-var DQUOTE = consts.DQUOTE;
+// var QUOTE = consts.QUOTE;
+// var DQUOTE = consts.DQUOTE;
 
 var ID_TOK = '#';
 var CLASS_TOK = '.';
