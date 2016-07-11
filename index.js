@@ -12,7 +12,7 @@ var fullUsage = '';
 var shortUsage = '';
 
 var basedir = loadUsage();
-
+var outFilePath = '';
 
 if (process.argv.length < 3){
 	printAndExit(shortUsage);
@@ -33,8 +33,18 @@ if (!inStr) {
 	process.exit(1);
 }
 
+
 var printer = new require('./qhtmlprinter')();
 printer.setPadPerLevel(opts.tabSize);
+
+if (opts.outFile) {
+	var fd = fs.createWriteStream(opts.outFile,
+								 {
+									  flags : 'w'
+									, autoClose : true
+								 });
+	printer.setOutFile(fd);
+}
 
 var parser = new require('./qhtmlparser')();
 parser.setInStr(inStr);

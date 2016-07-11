@@ -26,6 +26,7 @@ var padPerLevel;
 
 var padding = '';
 var tagStr = '';
+var outFile = '';
 
 module.exports = function() {
 
@@ -42,13 +43,13 @@ module.exports = function() {
 		printClasses();
 		printId();
 		printAttrs();
-		console.log(tagStr + GT);
+		doPrint(tagStr + GT);
 		addPadding();
 	};
 
 	this.closeCurrTag = function() {
 		decreasePadding();
-		console.log(padding + START_CLOSE_TAG + tags.pop() + GT);
+		doPrint(padding + START_CLOSE_TAG + tags.pop() + GT);
 	};
 
 	this.processTableDims = function(tabRows, tabCols) {
@@ -81,7 +82,7 @@ module.exports = function() {
 	this.printHead = function(docPrefix, 
 							  addStyle, 
 							  addMeta) {
-		console.log(docPrefix);
+		doPrint(docPrefix);
 		
 		openTag(HTML);
 		finishCurrOpenTag();	
@@ -92,12 +93,12 @@ module.exports = function() {
 		closeCurrTag();
 		
 		if (addStyle) {
-			console.log(padding + STYLE);
+			doPrint(padding + STYLE);
 		}
 
 		if (addMeta) {
-			console.log(padding + META_CHARSET );
-			console.log(padding + META_KEYWORDS);
+			doPrint(padding + META_CHARSET );
+			doPrint(padding + META_KEYWORDS);
 		}
 		
 		closeCurrTag();
@@ -110,6 +111,10 @@ module.exports = function() {
 		closeCurrTag();
 		closeCurrTag();
 	};	
+	
+	this.setOutFile = function(fd) {
+		outFile = fd;
+	}
 	return this;
 };
 
@@ -168,3 +173,10 @@ function printAttrs(){
 	attributes = {};
 }
 
+function doPrint(str) {
+	if (outFile) {
+		outFile.write(str + '\n');
+	} else {
+		console.log(str);
+	}
+}

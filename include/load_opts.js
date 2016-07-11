@@ -6,6 +6,7 @@ var knownOpts = {
     , "t" : Number
 	, "s" : String
 	, "m" : String
+	, "o" : String
 	, "u" : Boolean
 };
 
@@ -38,3 +39,4 @@ exports.htmlVersOpt = options.h  || HTML5_OPT;
 exports.docType = DOCTYPES[exports.htmlVersOpt];
 
 exports.options = options;
+exports.outFile = options.o;

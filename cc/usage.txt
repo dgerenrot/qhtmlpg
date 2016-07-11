@@ -24,8 +24,10 @@
 					5 is the default, specifying HTML5. 
 					See www.w3.org for various HTML versions.
 
-		-t <TabSize>		Tab size to use when nesting the tags.
+		-t <TabSize>	Tab size to use when nesting the tags.
 					The default is 4.
+
+		-o <FilePath>	File to write instead of stdout.
 
 		-s <YesOrNo>		Whether or not to include <link rel="stylesheet" ../>
 					dummy tag in the header. The default is Yes.
