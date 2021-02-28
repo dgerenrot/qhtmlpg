@@ -1,5 +1,5 @@
 
-require('./include/constants')();
+require('./utils/constants')();
 require('./qhtmltagprocessor')();
 
 
