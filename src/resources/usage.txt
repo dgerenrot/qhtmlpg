@@ -3,7 +3,7 @@
 
 	qhtmlpg [OPTIONS] <TagPatternString>
 
-	Quickly specify the structure of your HTML template on the command line!
+	Quickly specify the structure of your HTML template on the command line.
 	The <TagPatternString> determines the nesting of the tags using square
 	brackets. 
 	
@@ -32,8 +32,8 @@
 		-s <YesOrNo>		Whether or not to include <link rel="stylesheet" ../>
 					dummy tag in the header. The default is Yes.
 
-		-m <YesOrNo>		Whether or not to include <meta  ... />
-					dummy tag in the header. The default is Yes.
+		-m <YesOrNo>		Whether or not to include various additional <meta  ... />
+					dummy tags in the header. The default is Yes.
 					
 	TAG PATTERN STRING.
 		

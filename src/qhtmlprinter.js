@@ -13,6 +13,12 @@ var START_CLOSE_TAG = '</';
 var STYLE = '<link rel=\'stylesheet\' href=\'\' >';
 var META_CHARSET = '<meta charset=\'UTF-8\' />';
 var META_KEYWORDS = '<meta name=\'keywords\' content=\'\' />';
+var META_DESCRIPTION = '<meta name=\'description\' content=\'\' />';
+var META_COPYRIGHT = '<meta name=\'copyright\' content=\'\' />';
+var META_ROBOTS = '<!-- robots meta uses either index/noindex or follow/nofollow or both-->' +
+                   '\n<meta name=\'robots\' content=\'index,follow\' />';
+var MANIFEST = '<!-- manifest.json is used by progressive web apps. -->' +
+                '\n<link rel="manifest" href="./manifest.json">';
 // var SPACE = consts.SPACE;
 // var QUOTE = consts.QUOTE;
 var TROW = "tr";
@@ -99,6 +105,12 @@ module.exports = function() {
 		if (addMeta) {
 			doPrint(padding + META_CHARSET );
 			doPrint(padding + META_KEYWORDS);
+			doPrint(padding + META_DESCRIPTION);
+			doPrint(padding + META_COPYRIGHT);
+			doPrint('');
+			doPrint(META_ROBOTS.replace(/^/mg, padding));
+			doPrint('');
+			doPrint(MANIFEST.replace(/^/mg, padding));
 		}
 		
 		closeCurrTag();
