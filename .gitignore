@@ -1,11 +1,1 @@
-cc/*.exe
-src/cc/include/short_usage.h
-src/cc/include/usage.h
-src/cc/vs_solution/.vs
-cc/vs_solution/*.db
-src/cc/vs_solution/Debug/
-src/cc/vs_solution/Release/
-src/cc/vs_solution/*/Debug/
-src/cc/vs_solution/*/Release/
-
-
+node_modules
