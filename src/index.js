@@ -2,10 +2,11 @@
 
 var fs = require('fs');
 var path = require('path');
-var err = require('./include/err').err;
+var err = require('./utils/err').err;
+var opts = require ('./utils/load_opts');
 
-var USAGE_FILE = 'cc' + path.sep + 'usage.txt';
-var SHORT_USAGE_FILE = 'cc' + path.sep + 'short_usage.txt';
+var USAGE_FILE = 'resources' + path.sep + 'usage.txt';
+var SHORT_USAGE_FILE = 'resources' + path.sep + 'short_usage.txt';
 var JS_EXTENSION = '.js$';
 
 var fullUsage = '';
@@ -18,7 +19,6 @@ if (process.argv.length < 3){
 	printAndExit(shortUsage);
 }
 
-var opts = require ('./include/load_opts');
 
 if (opts.fullUsage) {
 	printAndExit(fullUsage);

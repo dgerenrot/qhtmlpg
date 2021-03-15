@@ -1,6 +1,6 @@
 
-require('./include/constants')();
-require ('./include/err')();
+require('./utils/constants')();
+require ('./utils/err')();
 
 // var QUOTE = consts.QUOTE;
 // var DQUOTE = consts.DQUOTE;
